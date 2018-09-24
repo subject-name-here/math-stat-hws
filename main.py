@@ -36,7 +36,7 @@ for k in ks:
         arr2 = [random.expovariate(Theta) for _ in range(N)]
 
         theta_est1 = ((k + 1) * mean_k(arr1, k)) ** (1 / k)
-        theta_est2 = (np.math.factorial(k) * mean_k(arr2, k)) ** (1 / k)
+        theta_est2 = (mean_k(arr2, k) / np.math.factorial(k)) ** (1 / k)
 
         dev1 += (Theta - theta_est1) ** 2
         dev2 += (Theta - theta_est2) ** 2
